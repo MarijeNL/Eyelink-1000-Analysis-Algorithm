@@ -13,4 +13,4 @@ The aim of the algorithm is to point out the viewing behavior of certain partici
   - classifier: function to classify the fixations of the participant
 
   ## Credit
-  You can use this algorithm to analyse the data from your experiment freely, but please mention my Github page and name when using my code.
+  You can use this algorithm to analyse the data from your experiment freely, but please mention my Github page and name when using my code. If you have questions about the algorithm, do not hesitate to contact me.
