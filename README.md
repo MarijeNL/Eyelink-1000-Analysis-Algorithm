@@ -11,3 +11,6 @@ The aim of the algorithm is to point out the viewing behavior of certain partici
   - showMovements: function to show the amount of movements within the video stimuli (can be used to show the difficulty of certain video stimuli)
   - heatmap: function to create a heatmap with the corresponding data
   - classifier: function to classify the fixations of the participant
+
+  ## Credit
+  You can use this algorithm to analyse the data from your experiment freely, but please mention my Github page and name when using my code.
