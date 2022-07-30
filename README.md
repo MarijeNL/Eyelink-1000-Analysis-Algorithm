@@ -7,7 +7,7 @@ Before you can use this algorithm, all of the EDF files needs to be changed to A
 
 ## Algorithm
 The aim of the algorithm is to point out the viewing behavior of certain participants or a group of participants. By comparing the viewing behavior, the differences between participants or groups can be showed. It is important to note that some parts of the algorithm depend on one another and if not all of the functions are used, the algorithm can show undesired behavior. The different components of the algorithm are listed down below:
-  - dd
+  - handRecognition: recognizes the hands within the video stimuli to define the locations of the hands
   - dd
   - dd
   - dd
