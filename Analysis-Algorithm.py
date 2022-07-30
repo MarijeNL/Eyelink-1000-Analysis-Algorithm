@@ -11,6 +11,9 @@ mp_hands = mp.solutions.hands
 videofile = "niveau3_brexit.mp4"
 outputname = "output_brexit.mp4"
 
+# Change value of this variable to select other files during the analysis
+filename = 'sub_13.asc' 
+
 def handRecognition(videofile, outputname):
     coords = []  
     video = videofile
@@ -91,10 +94,7 @@ def showMovements(coords, videofile):
     plt.plot(frames, mark16, label = "Landmark 16")
     plt.plot(frames, mark20, label = "Landmark 20") 
     
-    plt.show()
-
-# Change value of this variable to select other files
-filename = 'sub_13.asc'    
+    plt.show()   
 
 def heatmap(filename, movementType):
     total = []
