@@ -33,8 +33,7 @@ def handRecognition(videofile, outputname):
       while cap.isOpened():
         success, image = cap.read()
         if not success:
-          print("Ignoring empty camera frame.")
-          # If loading a video, use 'break' instead of 'continue'.
+          print("End of the video stimulus.")
           break
 
         # To improve performance, optionally mark the image as not writeable to
