@@ -92,6 +92,63 @@ def showMovements(coords, videofile):
     plt.plot(frames, mark20, label = "Landmark 20") 
     
     plt.show()
+
+# Change value of this variable to select other files
+filename = 'sub_13.asc'    
+
+def heatmap(filename, movementType):
+    total = []
+    trialIndex = []
+
+    for line in open(filename):
+        if ('!MODE RECORD') in line:        
+            total.append(line.split())
+        elif ('EFIX') in line:
+            total.append(line.split())
+        elif ('ESACC') in line:
+            total.append(line.split())
+
+    for element in total:
+        if ('MSG' == element[0]):
+            trialIndex.append(total.index(element))
+
+    # Define the fixations per trial
+    trial1 = total[trialIndex[0]:trialIndex[1] - 1]
+    trial2 = total[trialIndex[1]:trialIndex[2] - 1]
+    trial3 = total[trialIndex[2]:trialIndex[3] - 1]
+    trial4 = total[trialIndex[3]:trialIndex[4] - 1]
+    trial5 = total[trialIndex[4]:trialIndex[5] - 1]
+    trial6 = total[trialIndex[5]:trialIndex[6] - 1]
+    trial7 = total[trialIndex[6]:trialIndex[7] - 1]
+    trial8 = total[trialIndex[7]:trialIndex[8] - 1]
+    trial9 = total[trialIndex[8]:trialIndex[9] - 1]
+    trial10 = total[trialIndex[9]:]
+
+    coordsx = []
+    coordsy = []
+
+    for element in trial10:
+        if ('EFIX' in element[0]):
+            coordsx.append(element[5])
+            coordsy.append(element[6])
+
+    xtest = np.array(coordsx)
+    ytest = np.array(coordsy)
+
+    x = xtest.flatten()
+    y = ytest.flatten()
+
+    # Create heatmap
+    plt.hexbin(x, y, gridsize=150, extent=(0,2560,0,1440))
+    plt.savefig('heatmap.png')
+    plt.title("Heatmap "+str(file))
+    plt.xlabel('Width screen')
+    plt.ylabel('Height screen')
+    plt.xticks([0,500,1000,1500,2000,2560], [0,500,1000,1500,2000,2560])
+    plt.yticks([0,200,400,600,800,1000,1200,1460],[0,200,400,600,800,1000,1200,1460])
+    plt.colorbar()
+    plt.show() 
     
 handRecognition(videofile, outputname)
 showMovements(coords, videofile)
+heatmap(filename)
