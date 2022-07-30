@@ -1,5 +1,5 @@
 # Eyelink 1000 Analysis Algorithm
-Self-written algorithm to show to differences in viewing behavior between groups of participants or individual participants during different video stimuli. EDF from the Eyelink 1000 need to be used. The algorithm is written in Python and can be used with Jupyter Notebook. Please note that before the algorithm can be used, all of the EDF files needs to be changed to ASC files.
+Self-written algorithm to show to differences in viewing behavior between groups of participants or individual participants during different video stimuli. EDF files from the Eyelink 1000 need to be used. The algorithm is written in Python and can be used with Jupyter Notebook. Please note that before the algorithm can be used, all of the EDF files needs to be changed to ASC files.
 
 ---------------
 ## Change EDF files to ASC files
